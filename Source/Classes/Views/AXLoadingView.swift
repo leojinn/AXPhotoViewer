@@ -12,9 +12,7 @@
     @objc open fileprivate(set) var retryButton: AXButton?
     
     /// The error text to show inside of the `retryButton` when displaying an error.
-    @objc open var retryText: String {
-        return NSLocalizedString("Try again", comment: "AXLoadingView - retry text")
-    }
+    @objc open var retryText: String = NSLocalizedString("Try again", comment: "AXLoadingView - retry text")
     
     /// The attributes that will get applied to the `retryText` when displaying an error.
     @objc open var retryAttributes: [NSAttributedStringKey: Any] {
@@ -58,11 +56,7 @@
     @objc open fileprivate(set) var errorLabel: UILabel?
     
     /// The error text to show when displaying an error.
-    @objc open var errorText: String {
-        get {
-            return NSLocalizedString("An error occurred while loading this image.", comment: "AXLoadingView - error text")
-        }
-    }
+    @objc open var errorText: String = NSLocalizedString("An error occurred while loading this image.", comment: "AXLoadingView - error text")
     
     /// The attributes that will get applied to the `errorText` when displaying an error.
     @objc open var errorAttributes: [NSAttributedStringKey: Any] {
@@ -87,6 +81,12 @@
                 NSAttributedStringKey.foregroundColor: UIColor.white
             ]
         }
+    }
+    
+    @objc public convenience init(retryText: String, errorText: String) {
+        self.init()
+        self.retryText = retryText
+        self.errorText = errorText
     }
     
     @objc public init() {

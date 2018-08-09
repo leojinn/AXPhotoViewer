@@ -291,7 +291,7 @@ import UIKit
     }
     
     // MARK: - AXCaptionViewProtocol
-    func updateCaptionView(photo: AXPhotoProtocol) {
+    public func updateCaptionView(photo: AXPhotoProtocol) {
         self.captionView.applyCaptionInfo(attributedTitle: photo.attributedTitle ?? nil,
                                           attributedDescription: photo.attributedDescription ?? nil,
                                           attributedCredit: photo.attributedCredit ?? nil)
